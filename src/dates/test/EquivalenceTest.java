@@ -14,7 +14,7 @@ public class EquivalenceTest {
      * Equivalence classes for our input space.
      *
      * Year: A year is invalid if it is less than 1753 and valid otherwise. We can form two partitions from this
-     * specification: y1: year < 1753 and y2: year >= 1753.
+     * specification: y1: year < 1753  no leap year, y2: year >= 1753 no leap year, y3: year < 1753 leap year, y4: year >= 1753 leap year.
      *
      * Month: The valid range for a month is between 1 and 12 (1 <= month <= 12). From this, we can form three partitions:
      * m1: month < 1, m2: 1 <= month <= 12, m3: month > 12.
@@ -27,7 +27,7 @@ public class EquivalenceTest {
      * The equivalence class that this test is based on is (y1, m1, d1). (all less than their legal range).
      * This equivalence class has not been covered before by tests in the other two classes.
      *
-     * Other test cases are from the classes {(y1,m2,d2), (y2,m1,d2), (y2,m3,d2), (y2,m2,d3)x2, (y2,m2,d2)x2, (y2,m2,d3)}
+     * Other test cases are from the classes {(y3,m2,d2), (y2,m1,d2), (y4,m3,d2), (y2,m2,d3), (y4,m2,d3), (y4,m2,d2), (y2,m2,d2), (y4,m2,d3)}
      * Thus this class is not already tested by other the other test cases.
      *
      * This test case should throw an IllegalArgumentException as more than one of the inputs (all 3) are invalid.
