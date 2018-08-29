@@ -10,6 +10,16 @@ import static org.junit.Assert.fail;
  * SOFTENG 254 2018 Assignment 2 submission
  *
  * Author: (jordan sim-smith, jsim862)
+ *
+ * Branch Coverage Justification:
+ * If line 75 doesn't throw an IllegalArgumentException, the only possible values of month are 1 through 12.
+ * The for loop on line 92 will iterate for each of the 12 entries in doomsdaysByMonth. Between these 12 entries, the
+ * numbers 1 through 12 are present in their index 1 position.
+ * The loop will break upon finding the value from 1 to 12 matching its month number (1 to 12). Thus the loop will always
+ * break and will never exit naturally (no more items in the Collection left). Furthermore, the loop never not be entered
+ * as there is an invariant 12 entries in the doomsDayByMonth array.
+ * Therefore, the "FAIL" (do not enter) branch of the for loop on line 92 is never executed. Thus, we can not achieve
+ * 100% branch coverage.
  **/
 public class BranchTests {
 
