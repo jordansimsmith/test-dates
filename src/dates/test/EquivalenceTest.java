@@ -3,6 +3,7 @@ package dates.test;
 import dates.Dates;
 import org.junit.Test;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;
 
 public class EquivalenceTest {
@@ -39,7 +40,7 @@ public class EquivalenceTest {
             Dates.dayOfWeek(1, -1, -1);
             fail();
         } catch (IllegalArgumentException e) {
-            // do nothing
+            assertEquals("Invalid date: year=1, month=-1, day=-1", e.getMessage());
         }
     }
 }

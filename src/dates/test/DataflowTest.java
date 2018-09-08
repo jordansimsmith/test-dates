@@ -3,6 +3,8 @@ package dates.test;
 import dates.Dates;
 import org.junit.Test;
 
+import static org.junit.Assert.assertEquals;
+
 public class DataflowTest {
 
     /**
@@ -23,12 +25,12 @@ public class DataflowTest {
      * @throws Exception
      */
     @Test
-    public void testDivide400LeapYearFebruary29() throws Exception {
+    public void testDivide400LeapYearFebruary30() throws Exception {
 
         try {
             Dates.dayOfWeek(2000, 2,30);
         } catch (IllegalArgumentException e) {
-            // do nothing
+            assertEquals("Invalid date: year=2000, month=2, day=30", e.getMessage());
         }
     }
 }

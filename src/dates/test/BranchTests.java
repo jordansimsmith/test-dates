@@ -35,7 +35,7 @@ public class BranchTests {
             Dates.dayOfWeek(1600,1,1);
             fail();
         } catch (IllegalArgumentException e) {
-            // do nothing
+            assertEquals("Invalid date: year=1600, month=1, day=1", e.getMessage());
         }
     }
 
@@ -51,7 +51,7 @@ public class BranchTests {
             Dates.dayOfWeek(1800, -12,1);
             fail();
         } catch (IllegalArgumentException e) {
-            // do nothing
+            assertEquals("Invalid date: year=1800, month=-12, day=1", e.getMessage());
         }
     }
 
@@ -67,7 +67,7 @@ public class BranchTests {
             Dates.dayOfWeek(2040, 13, 1);
             fail();
         } catch (IllegalArgumentException e) {
-            // do nothing
+            assertEquals("Invalid date: year=2040, month=13, day=1", e.getMessage());
         }
     }
 
@@ -83,7 +83,7 @@ public class BranchTests {
             Dates.dayOfWeek(1853, 11,31);
             fail();
         } catch (IllegalArgumentException e) {
-            // do nothing
+            assertEquals("Invalid date: year=1853, month=11, day=31", e.getMessage());
         }
     }
 
@@ -99,7 +99,7 @@ public class BranchTests {
             Dates.dayOfWeek(2000, 2,30);
             fail();
         } catch (IllegalArgumentException e) {
-            // do nothing
+            assertEquals("Invalid date: year=2000, month=2, day=30", e.getMessage());
         }
     }
 
